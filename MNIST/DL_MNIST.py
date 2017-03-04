@@ -4,7 +4,7 @@ import input_data_nd
 import tensorflow as tf
 
 
-mnist = input_data_nd.read_data_sets("/Users/mero/work/mywork/ml/wavenet/data/MNIST/", one_hot=True)
+mnist = input_data_nd.read_data_sets("../../data/MNIST/", one_hot=True)
 
 def weight_variable(shape):
   initial = tf.truncated_normal(shape, stddev=0.1)
