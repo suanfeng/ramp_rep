@@ -3,7 +3,7 @@
 import input_data_nd
 import tensorflow as tf
 
-mnist = input_data_nd.read_data_sets("/Users/mero/work/mywork/ml/wavenet/data/MNIST/", one_hot=True)
+mnist = input_data_nd.read_data_sets("../../data/MNIST/", one_hot=True)
 
 """x 代表任意数量的MNIST图标,None代表图像的数量"""
 x = tf.placeholder(tf.float32, [None, 784])
@@ -41,4 +41,4 @@ for i in range(1000):
 
 correct_prediction = tf.equal(tf.argmax(y, 1), tf.argmax(y_,1))
 accuray = tf.reduce_mean(tf.cast(correct_prediction, "float"))
-print sess.run(accuray, feed_dict={x:mnist.test.images, y_:mnist.test.labels})
+print (sess.run(accuray, feed_dict={x:mnist.test.images, y_:mnist.test.labels}))
